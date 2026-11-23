@@ -1,0 +1,266 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<meta name="theme-color" content="#2b1026" />
+<title>Para Noemiquis ❤️</title>
+<link rel="preconnect" href="https://fonts.googleapis.com" />
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+<link href="https://fonts.googleapis.com/css2?family=Bodoni+Moda:ital,opsz,wght@0,6..96,500;1,6..96,500&family=Caveat:wght@500&family=Figtree:wght@400;600&display=swap" rel="stylesheet" />
+<style>
+:root{
+  --plum:#2b1026; --garnet:#b3173f; --blush:#fbe6ec; --rose:#f3b8c8; --gold:#e9c07a; --ink:#3a1830;
+  --display:"Bodoni Moda","Didot","Georgia",serif;
+  --hand:"Caveat","Segoe Print","Comic Sans MS",cursive;
+  --body:"Figtree","Segoe UI",system-ui,sans-serif;
+}
+*{box-sizing:border-box;margin:0;padding:0}
+html{scroll-behavior:smooth}
+body{font-family:var(--body);background:var(--plum);color:var(--ink);overflow-x:hidden}
+:focus-visible{outline:3px solid var(--gold);outline-offset:3px}
+
+/* ---------- Portada ---------- */
+.hero{position:relative;min-height:100vh;min-height:100svh;display:grid;place-items:center;padding:36px 20px;text-align:center;color:#fde9f0;overflow:hidden;
+  background:radial-gradient(60% 50% at 50% 32%,#5c1f48 0%,transparent 72%),var(--plum)}
+.petal{position:absolute;top:-30px;background:var(--rose);border-radius:100% 0 100% 0;opacity:.5;animation:fall linear infinite;pointer-events:none}
+@keyframes fall{to{transform:translate3d(var(--dx),115vh,0) rotate(540deg)}}
+.hero-inner{position:relative;z-index:1;width:100%;max-width:520px;animation:rise 1s ease-out both}
+@keyframes rise{from{opacity:0;transform:translateY(26px)}to{opacity:1;transform:none}}
+.badge{display:block;font-family:var(--hand);font-size:1.5rem;color:var(--gold);margin-bottom:14px}
+.arch{width:min(210px,58vw);aspect-ratio:4/5;margin:0 auto 26px;border-radius:999px 999px 16px 16px;overflow:hidden;
+  border:2px solid var(--gold);outline:1px solid rgba(233,192,122,.45);outline-offset:9px;background:var(--rose);
+  animation:float 4s ease-in-out infinite}
+.arch img{width:100%;height:100%;object-fit:cover;display:block}
+@keyframes float{50%{transform:translateY(-8px)}}
+h1{font-family:var(--display);font-weight:500;line-height:1;margin-bottom:16px}
+h1 .hi{display:block;font-size:clamp(1.25rem,4vw,1.6rem);font-style:italic;color:var(--rose)}
+h1 .name{display:block;font-style:italic;font-size:clamp(3.2rem,15vw,5.8rem);letter-spacing:-.01em;color:#fff;margin:4px 0 6px;text-shadow:0 0 38px rgba(243,184,200,.45)}
+.subtitle{font-size:1.04rem;line-height:1.65;color:#e9cfda;max-width:44ch;margin:0 auto 26px}
+.arena{position:relative;min-height:140px;display:flex;align-items:center;justify-content:center;gap:14px;flex-wrap:wrap;padding:10px}
+.btn{font:inherit;font-weight:600;font-size:1rem;border-radius:999px;cursor:pointer;user-select:none;-webkit-tap-highlight-color:transparent;transition:transform .2s ease,box-shadow .2s ease}
+#btnYes{border:none;padding:15px 30px;background:var(--gold);color:var(--plum);box-shadow:0 0 0 6px rgba(233,192,122,.18),0 12px 28px rgba(0,0,0,.35);z-index:2}
+#btnYes:hover{transform:scale(1.05);box-shadow:0 0 0 9px rgba(233,192,122,.22),0 14px 30px rgba(0,0,0,.4)}
+#btnNo{padding:12px 22px;background:transparent;color:#f3d4df;border:1px solid rgba(243,184,200,.45);z-index:3;max-width:260px}
+.hint-msg{min-height:24px;margin-top:8px;font-family:var(--hand);font-size:1.35rem;color:var(--gold)}
+
+/* ---------- Historia ---------- */
+.story{display:none;background:var(--blush);border-radius:36px 36px 0 0;position:relative;
+  background-image:radial-gradient(circle at 12% 8%,rgba(243,184,200,.55),transparent 38%),radial-gradient(circle at 92% 60%,rgba(243,184,200,.4),transparent 34%)}
+.story.unlocked{display:block;animation:rise .8s ease-out both}
+.chapter{display:grid;grid-template-columns:1fr 1fr;gap:56px;align-items:center;max-width:1040px;margin:0 auto;padding:84px 24px}
+.chapter+.chapter{border-top:1px dashed rgba(179,23,63,.25)}
+.chapter.wide{grid-template-columns:1fr}
+.chapter:not(.wide):nth-of-type(even) .photos{order:-1}
+.copy h2{font-family:var(--display);font-weight:500;font-size:clamp(1.7rem,4vw,2.5rem);line-height:1.12;color:var(--garnet);margin-bottom:18px;text-wrap:balance}
+.copy p{font-size:1.06rem;line-height:1.75;max-width:56ch}
+.copy p+p{margin-top:14px}
+.photos{display:grid;gap:34px;padding:10px}
+.wide .photos{grid-template-columns:repeat(auto-fit,minmax(220px,1fr));margin-top:18px}
+.polaroid{position:relative;background:#fff;padding:11px 11px 10px;box-shadow:0 16px 34px rgba(43,16,38,.2);transform:rotate(var(--r,-2deg));cursor:zoom-in;transition:transform .25s ease,box-shadow .25s ease}
+.polaroid:nth-child(even){--r:1.6deg}
+.polaroid:nth-child(3n){--r:-1deg}
+.polaroid:hover,.polaroid:focus-visible{transform:rotate(0) scale(1.03);box-shadow:0 22px 40px rgba(43,16,38,.28)}
+.polaroid::before{content:"";position:absolute;top:-13px;left:50%;width:88px;height:26px;background:rgba(233,192,122,.6);transform:translateX(-50%) rotate(-3deg)}
+.polaroid img{width:100%;height:auto;display:block}
+.polaroid figcaption{font-family:var(--hand);font-size:1.3rem;line-height:1.2;text-align:center;padding:12px 6px 4px;color:var(--ink)}
+
+.finale{background:var(--plum);color:var(--blush);text-align:center;padding:96px 24px 110px}
+.finale .heart{font-size:2.4rem;display:block;margin-bottom:18px}
+.finale p{font-family:var(--display);font-style:italic;font-size:clamp(1.35rem,3.6vw,2.1rem);line-height:1.5;max-width:30ch;margin:0 auto;text-wrap:balance}
+
+/* ---------- Visor de fotos ---------- */
+.lb{position:fixed;inset:0;z-index:1000;display:none;place-items:center;align-content:center;gap:14px;padding:20px;background:rgba(43,16,38,.93);cursor:zoom-out}
+.lb.open{display:grid;animation:rise .25s ease-out both}
+.lb img{max-width:92vw;max-height:78vh;border:10px solid #fff;box-shadow:0 20px 60px rgba(0,0,0,.5)}
+.lb p{font-family:var(--hand);font-size:1.5rem;color:var(--gold);text-align:center}
+
+.floating-heart{position:fixed;pointer-events:none;font-size:1.4rem;z-index:999;animation:up 1.5s ease-out forwards}
+@keyframes up{from{opacity:1;transform:translateY(0) scale(.8)}to{opacity:0;transform:translateY(-120px) scale(1.4)}}
+
+@media (max-width:760px){
+  .chapter{grid-template-columns:1fr;gap:34px;padding:64px 20px}
+  .chapter:not(.wide):nth-of-type(even) .photos{order:0}
+}
+@media (prefers-reduced-motion:reduce){
+  html{scroll-behavior:auto}
+  *{animation:none!important;transition:none!important}
+}
+</style>
+</head>
+<body>
+<section class="hero" id="panelInicio">
+  <div class="hero-inner">
+    <span class="badge">Hecho con todo mi cariño para ti</span>
+    <div class="arch"><img src="img/pareja.svg" alt="Ilustración de pareja" /></div>
+    <h1><span class="hi">Hola, mi</span><span class="name">Noemiquis</span><span class="hi">preciosa ❤️</span></h1>
+    <p class="subtitle">A veces las palabras cortas no alcanzan para decirte lo importante que eres para mí. ¿Me dejas llevarte a un rinconcito que armé pensando en tu sonrisa?</p>
+    <div class="arena" id="arena">
+      <button type="button" class="btn" id="btnYes">Sí, amor, muéstrame ❤️</button>
+      <button type="button" class="btn" id="btnNo">No</button>
+    </div>
+    <p class="hint-msg" id="hintMsg"></p>
+  </div>
+</section>
+
+<main class="story" id="historia">
+  <article class="chapter wide">
+    <div class="copy">
+      <h2>Ese día que estaba estresado y en pleno trabajo</h2>
+      <p>Mi amor, en este recuerdo yo estaba estresado y apenas hablamos unos minutos me cambió todo mi día para bien. Y eso es lo que más me gusta: que solo el hecho de hablar contigo me cambie el día completamente.</p>
+      <p>Entre código, trabajo, pendientes y cansancio, bastaba escucharte o leerte para que volviera la calma y sintiera que todo tenía solución.</p>
+    </div>
+    <div class="photos">
+      <figure class="polaroid"><img src="img/este-dia-estaba_extresado.jpg" alt="Programando en un día estresado" /><figcaption>Días pesados de código y estrés que cambiaban apenas hablábamos.</figcaption></figure>
+      <figure class="polaroid"><img src="img/extresado.jpg" alt="Momento de estrés" /><figcaption>Cuando el cansancio apretaba y tu voz devolvía la calma.</figcaption></figure>
+      <figure class="polaroid"><img src="img/extresado-.jpg" alt="Otro momento de estrés" /><figcaption>Un respiro de cariño en medio de las vueltas del día.</figcaption></figure>
+      <figure class="polaroid"><img src="img/traabajo.jpg" alt="Recuerdo de trabajo" /><figcaption>Horas de trabajo que se hacían llevaderas con tu cariño.</figcaption></figure>
+      <figure class="polaroid"><img src="img/trabajo2.jpg" alt="Trabajo 2" /><figcaption>Avanzando en el trabajo sabiendo que hablar contigo cambia el día.</figcaption></figure>
+    </div>
+  </article>
+
+  <article class="chapter">
+    <div class="copy">
+      <h2>En esa foto de boda</h2>
+      <p>Mi amorcito, te lo dije en ese momento, pero de verdad te ves muy bien: te pareces en esta foto a la protagonista de Kong, muy de los 80. Te amo, mi bebé.</p>
+      <p>Tiene ese aire clásico, elegante y encantador que te queda tan único, como sacado de una película especial que uno quiere volver a ver mil veces.</p>
+    </div>
+    <div class="photos">
+      <figure class="polaroid"><img src="img/foto-boda.jpg" alt="Foto de boda con estilo ochentero" /><figcaption>Ese estilo de los 80 que te hace ver tan especial, Noemiquis.</figcaption></figure>
+    </div>
+  </article>
+
+  <article class="chapter">
+    <div class="copy">
+      <h2>La más hermosa y esos ojitos</h2>
+      <p>Noemiquis, no hay forma de ver esta foto y no quedarse admirándote. Eres la más hermosa, y tus ojos son hermosos de verdad: tienen una luz, una profundidad y una dulzura que atrapan desde el primer instante.</p>
+      <p>Cuando sonríes con la mirada, todo alrededor parece ponerse más bonito. Me encanta mirarte y descubrir lo increíble que eres tal como eres.</p>
+    </div>
+    <div class="photos">
+      <figure class="polaroid"><img src="img/la-mas-hermosa.jpg" alt="Foto de Noemiquis la más hermosa" /><figcaption>Simplemente la más hermosa, mi Noemiquis.</figcaption></figure>
+      <figure class="polaroid"><img src="img/lo-ojitos-mas-hermosos.jpg" alt="Los ojitos más hermosos de Noemiquis" /><figcaption>Esos ojitos tan lindos que me encantan.</figcaption></figure>
+    </div>
+  </article>
+
+  <article class="chapter">
+    <div class="copy">
+      <h2>Cuando aún eran bebés</h2>
+      <p>Mi amor, ¿los recuerdas cuando aún eran bebés? Te extrañan mucho, mi bebé hermosa.</p>
+      <p>Verlos chiquitos trae tanta ternura y tantos momentos lindos a la memoria. Qué bonito es compartir también esos pedacitos de vida y de cariño.</p>
+    </div>
+    <div class="photos">
+      <figure class="polaroid"><img src="img/los-bebes.jpg" alt="Los perritos cuando eran bebés" /><figcaption>Los bebés de la casa — guardando cariño para ti.</figcaption></figure>
+    </div>
+  </article>
+
+  <article class="chapter">
+    <div class="copy">
+      <h2>Tu naturalidad de cada día</h2>
+      <p>Una de las cosas que más me enamoran de ti es tu naturalidad, Noemiquis. No necesitas poses ni esfuerzos para verte increíble; tu belleza cotidiana, sencilla y espontánea tiene un encanto enorme.</p>
+      <p>En lo más simple de cada día, en un gesto tranquilo o en un momento común, tienes una ternura que hace que te quiera todavía más.</p>
+    </div>
+    <div class="photos">
+      <figure class="polaroid"><img src="img/naturalidad.jpg" alt="Belleza cotidiana y naturalidad de Noemiquis" /><figcaption>La belleza de lo cotidiano cuando eres tú, Noemiquis.</figcaption></figure>
+    </div>
+  </article>
+
+  <article class="chapter">
+    <div class="copy">
+      <h2>Pensando en ti</h2>
+      <p>En esta foto estaba pensando en ti, Noemiquis. A veces uno está quieto o haciendo sus cosas, pero la mente se va directo a tu nombre, a tu risa y a lo bien que se siente quererte.</p>
+      <p>Pensar en ti se volvió costumbre bonita: un recordatorio constante de lo afortunado que me siento de tenerte en mi vida.</p>
+    </div>
+    <div class="photos">
+      <figure class="polaroid"><img src="img/pensando-en-ti.jpg" alt="Foto pensando en Noemiquis" /><figcaption>Pensando en ti, como pasa más seguido de lo que imaginas.</figcaption></figure>
+    </div>
+  </article>
+
+  <article class="chapter">
+    <div class="copy">
+      <h2>Ese recuerdo del cine y BTS que guardo tan presente</h2>
+      <p>Noemiquis, ¿recuerdas este momento? Ver esta foto me hace acordar clarito de cuando fuiste al cine a ver a BTS y te dieron todos estos regalitos.</p>
+      <p>Yo veía la ilusión enorme con la que hablabas de sus canciones, de cómo te hacían sentir y de todo lo que significan para ti. Era realmente muy feliz escuchándote contar las historias de BTS desde sus comienzos, porque ver tus ojos brillar cuando hablas de algo que amas es de las cosas más lindas que puedo mirar.</p>
+    </div>
+    <div class="photos">
+      <figure class="polaroid"><img src="img/recuerdo-btc.jpeg" alt="Recuerdos de BTS y regalos del cine" /><figcaption>Los detalles del cine y BTS: un recuerdo lleno de ilusión, música y emoción tuya.</figcaption></figure>
+    </div>
+  </article>
+
+  <section class="finale">
+    <span class="heart">❤️</span>
+    <h2 style="font-size:0;line-height:0">Para seguir sumando juntos</h2>
+    <p>Cada uno de estos recuerdos me confirma lo especial que eres para mí, Noemiquis. Gracias por los días difíciles que se volvieron suaves, por las risas, por tu naturalidad y por cada momento compartido. Te quiero mucho, mi bebé.</p>
+  </section>
+</main>
+
+<div class="lb" id="lb" role="dialog" aria-label="Foto ampliada"><img id="lbImg" alt="" /><p id="lbCap"></p></div>
+
+<script>
+const btnYes=document.getElementById("btnYes"),btnNo=document.getElementById("btnNo"),
+  arena=document.getElementById("arena"),hintMsg=document.getElementById("hintMsg"),
+  historia=document.getElementById("historia");
+
+/* Pétalos de fondo */
+(function(){
+  const hero=document.getElementById("panelInicio");
+  for(let i=0;i<16;i++){
+    const p=document.createElement("span"),s=9+Math.random()*10;
+    p.className="petal";
+    p.style.cssText=`left:${Math.random()*100}%;width:${s}px;height:${s*1.3}px;--dx:${Math.random()*160-80}px;animation-duration:${10+Math.random()*10}s;animation-delay:-${Math.random()*15}s`;
+    hero.appendChild(p);
+  }
+})();
+
+/* Botón "No" que se escapa */
+const frasesNo=["¿Segura, Noemiquis? 🥺","Ese botón no quiere que te lo pierdas...","¡Casi le das! Intenta con el otro ❤️","Prometo que abajo hay algo muy lindo para ti 💕","El 'Sí' te está esperando con mucho cariño ✨"];
+let intentos=0,escalaYes=1;
+function escaparBotonNo(e){
+  if(e)e.preventDefault();
+  const a=arena.getBoundingClientRect(),b=btnNo.getBoundingClientRect();
+  const maxX=Math.max(0,a.width-b.width-10),maxY=Math.max(0,a.height-b.height-10);
+  btnNo.style.position="absolute";
+  btnNo.style.left=`${Math.floor(Math.random()*(maxX+1))}px`;
+  btnNo.style.top=`${Math.floor(Math.random()*(maxY+1))}px`;
+  btnNo.textContent=frasesNo[intentos%frasesNo.length];
+  hintMsg.textContent="Parece que el 'No' prefiere escaparse antes que cerrarte la puerta.";
+  intentos++;
+  escalaYes=Math.min(1.35,escalaYes+0.06);
+  btnYes.style.transform=`scale(${escalaYes})`;
+}
+btnNo.addEventListener("mouseenter",escaparBotonNo);
+btnNo.addEventListener("touchstart",escaparBotonNo,{passive:false});
+btnNo.addEventListener("click",escaparBotonNo);
+
+/* Corazones al decir que sí */
+function lanzarCorazones(){
+  const c=["❤️","💖","💕","✨","💗"];
+  for(let i=0;i<16;i++){
+    const s=document.createElement("span");
+    s.className="floating-heart";
+    s.textContent=c[i%c.length];
+    s.style.left=`${Math.random()*90+5}vw`;
+    s.style.top=`${Math.random()*40+45}vh`;
+    document.body.appendChild(s);
+    setTimeout(()=>s.remove(),1500);
+  }
+}
+btnYes.addEventListener("click",()=>{
+  lanzarCorazones();
+  historia.classList.add("unlocked");
+  hintMsg.textContent="¡Qué alegría que dijeras que sí, Noemiquis! Bajemos juntos ✨";
+  setTimeout(()=>historia.scrollIntoView({behavior:"smooth"}),220);
+});
+
+/* Visor de fotos */
+const lb=document.getElementById("lb"),lbImg=document.getElementById("lbImg"),lbCap=document.getElementById("lbCap");
+document.querySelectorAll(".polaroid").forEach(f=>{
+  f.tabIndex=0;
+  const abrir=()=>{const im=f.querySelector("img");lbImg.src=im.src;lbImg.alt=im.alt;lbCap.textContent=f.querySelector("figcaption").textContent;lb.classList.add("open")};
+  f.addEventListener("click",abrir);
+  f.addEventListener("keydown",e=>{if(e.key==="Enter"||e.key===" "){e.preventDefault();abrir()}});
+});
+lb.addEventListener("click",()=>lb.classList.remove("open"));
+document.addEventListener("keydown",e=>{if(e.key==="Escape")lb.classList.remove("open")});
+</script>
+</body>
+</html>
